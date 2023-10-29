@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  /* Utilisez flex-direction pour les rectangles perpendiculaires */
+  flex-direction: row; /* Par défaut, les rectangles sont côte à côte */
+}
+
+.vertical {
+  width: 200px; /* Largeur du rectangle vertical */
+  height: 100%; /* Hauteur du rectangle vertical (remplit la hauteur de l'en-tête) */
+  background-color: black;
+}
+
+.horizontal {
+  width: 100%; /* Largeur du rectangle horizontal (remplit la largeur de l'en-tête) */
+  height: 200px; /* Hauteur du rectangle horizontal */
+  background-color: black;
+}
