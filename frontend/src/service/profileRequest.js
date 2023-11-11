@@ -20,7 +20,7 @@ export function getUser(id) {
         age: userInfos.age,
       };
   
-      const activity = todayScore || score;
+      const myScore = todayScore || score;
 
       const averageSession = null; 
       
@@ -31,7 +31,7 @@ export function getUser(id) {
         lipidCount: keyData.lipidCount,
       };
       
-      return new UserModel(info, activity, averageSession, performance);
+      return new UserModel(info, myScore, averageSession, performance);
 
     } else {
       // L'utilisateur avec cet ID n'a pas été trouvé

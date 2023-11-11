@@ -34,7 +34,7 @@ position:relative;
 top:-100px;
   width: 200px; /* Largeur du logo */
   height: 70px; /* Hauteur du logo */
-  background-image: url("logo.PNG"); 
+  background-image: url("../img/logo.PNG"); 
   background-size: cover; 
 }
 
@@ -80,7 +80,7 @@ left: 200px;
   top:-100px;
     width: 80px; /* Largeur du logo */
     height: 70px; /* Hauteur du logo */
-    background-image: url("yoga.PNG"); 
+    background-image: url("../img/yoga.PNG"); 
     background-size: cover; 
   }
   .swimm {
@@ -88,7 +88,7 @@ left: 200px;
     top:-100px;
       width: 80px; /* Largeur du logo */
       height: 70px; /* Hauteur du logo */
-      background-image: url("swimm.PNG"); 
+      background-image: url("../img/swimm.PNG"); 
       background-size: cover; 
     }
     .velo {
@@ -96,7 +96,7 @@ left: 200px;
       top:-100px;
         width: 80px; /* Largeur du logo */
         height: 70px; /* Hauteur du logo */
-        background-image: url("velo.PNG"); 
+        background-image: url("../img/velo.PNG"); 
         background-size: cover; 
       }
       .muscu {
@@ -104,7 +104,7 @@ left: 200px;
         top:-100px;
           width: 80px; /* Largeur du logo */
           height: 70px; /* Hauteur du logo */
-          background-image: url("muscu.PNG"); 
+          background-image: url("../img/muscu.PNG"); 
           background-size: cover; 
         }
       

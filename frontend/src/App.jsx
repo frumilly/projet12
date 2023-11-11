@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route index element={<Home />} />
           
             <Route path="/profile/:id" element={<Profile />} />
+            <Route path="*" element={<ErrorPage />} />
 
           </Route>
         </Routes>
