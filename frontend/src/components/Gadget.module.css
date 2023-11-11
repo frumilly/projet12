@@ -1,0 +1,20 @@
+/* Gadget.module.css */
+
+.gadgetItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .gadgetStyle {
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+  }
+  
+  .measureUnitContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px; /* Ajoutez un espacement à gauche si nécessaire */
+  }
+  

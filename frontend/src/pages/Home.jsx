@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from "./Home.module.css";
 
 function Home() {
   return (
     <div className="home">
-      <p className={styles.acceuilText}>Félicitation! Vous avez explosé vos objectifs hier</p>
+      <div className={styles.profileButtons}>
+        <Link to="/profile/12" className={styles.profileButton}>Voir le profil de Karl</Link>
+        <Link to="/profile/18" className={styles.profileButton}>Voir le profil de Cecilia</Link>
+      </div>
     </div>
   );
 }
