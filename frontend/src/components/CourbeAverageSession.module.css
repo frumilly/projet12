@@ -1,0 +1,15 @@
+/* CourbeAverageSession.module.css */
+.chartContainer {
+    position: relative;
+    background-color: red; /* Fond rouge */
+    width: 300px;
+    color:white;
+    top: 40px;
+    border-radius: 10px; /* Bords arrondis */
+  overflow: hidden; /* Masquer les coins arrondis dépassant */
+}
+  
+
+  .recharts-cartesian-grid {
+    stroke: none; /* Enlever le grillage */
+  }

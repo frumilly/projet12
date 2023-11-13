@@ -1,40 +1,40 @@
-import { USER_MAIN_DATA } from './mockData';
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from './mockData';
 import { UserModel } from './UserModel';
-const isMock = true; // Définissez cette variable sur true pour utiliser les données de mock
+
+const isMock = true;
 
 export function getUser(id) {
   if (isMock) {
-    // En mode mock, recherchez l'utilisateur dans USER_MAIN_DATA en utilisant son ID
-    const user = USER_MAIN_DATA.find((userData) => userData.id === id);
+    const userData = USER_MAIN_DATA.find((data) => data.id === id);
 
-    if (user) {
-      // Accédez à ses données
-      const { userInfos, keyData } = user;
-      const { todayScore, score } = user;
+    if (userData) {
+      const { userInfos, keyData } = userData;
+      const { todayScore, score } = userData;
 
-      // Créez un objet UserModel 
       const info = {
-        id: user.id, // Ajoutez cette ligne pour initialiser la propriété id
+        id: userData.id,
         firstName: userInfos.firstName,
         lastName: userInfos.lastName,
         age: userInfos.age,
       };
-  
+
       const myScore = todayScore || score;
 
-      const averageSession = null; 
-      
-      const performance = {
+      // Utilisez données du mockData pour averageSession, performance et activity
+      const averageSession = USER_AVERAGE_SESSIONS.find((data) => data.userId === id)?.sessions || [];
+      const performance = USER_PERFORMANCE.find((data) => data.userId === id)?.data || [];
+      const activity = USER_ACTIVITY.find((data) => data.userId === id)?.sessions || [];
+    
+
+      const myKeyData = {
         calorieCount: keyData.calorieCount,
         proteinCount: keyData.proteinCount,
         carbohydrateCount: keyData.carbohydrateCount,
         lipidCount: keyData.lipidCount,
       };
-      
-      return new UserModel(info, myScore, averageSession, performance);
 
+      return new UserModel(info, myScore, myKeyData, activity, averageSession, performance);
     } else {
-      // L'utilisateur avec cet ID n'a pas été trouvé
       return null;
     }
   } else {
