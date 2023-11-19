@@ -3,6 +3,8 @@
 .gadgetItem {
     display: flex;
     align-items: center;
+    background-color: rgb(245, 245, 249);
+    margin-bottom: 20px;
   }
   
   .gadgetStyle {

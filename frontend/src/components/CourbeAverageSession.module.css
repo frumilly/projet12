@@ -13,3 +13,19 @@
   .recharts-cartesian-grid {
     stroke: none; /* Enlever le grillage */
   }
+  /* CourbeAverageSession.module.css */
+
+.chartContainer {
+  color: #fff; /* Couleur du texte en blanc */
+}
+
+.tooltip {
+  background: black; /* Fond rouge plus foncé pour le tooltip */
+  padding: 10px;
+  border-radius:5px;
+  color: #fff; /* Couleur du texte en blanc */
+}
+
+.tooltipContent {
+  margin: 0;
+}

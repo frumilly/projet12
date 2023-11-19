@@ -10,10 +10,10 @@ function Header() {
         <div className={styles.logo}></div> 
         <ul className={styles.menu}>
           <li>
-            <a href="lien_vers_accueil" className={styles.menuLink}>Accueil</a>
+            <a href="/" className={styles.menuLink}>Accueil</a>
           </li>
           <li>
-            <a href="lien_vers_profil" className={styles.menuLink}>Profil</a>
+            <a href="/" className={styles.menuLink}>Profil</a>
           </li>
           <li>
             <a href="lien_vers_reglage" className={styles.menuLink}>Réglage</a>

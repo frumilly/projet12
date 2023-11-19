@@ -7,7 +7,7 @@ export function getUser(id) {
   if (isMock) {
     const userData = USER_MAIN_DATA.find((data) => data.id === id);
 
-    if (userData) {
+   
       const { userInfos, keyData } = userData;
       const { todayScore, score } = userData;
 
@@ -23,6 +23,7 @@ export function getUser(id) {
       // Utilisez données du mockData pour averageSession, performance et activity
       const averageSession = USER_AVERAGE_SESSIONS.find((data) => data.userId === id)?.sessions || [];
       const performance = USER_PERFORMANCE.find((data) => data.userId === id)?.data || [];
+      // Données à traduire
       const activity = USER_ACTIVITY.find((data) => data.userId === id)?.sessions || [];
     
 
@@ -32,13 +33,15 @@ export function getUser(id) {
         carbohydrateCount: keyData.carbohydrateCount,
         lipidCount: keyData.lipidCount,
       };
-
       return new UserModel(info, myScore, myKeyData, activity, averageSession, performance);
-    } else {
-      return null;
-    }
+// Dans cette partie il n'y aura que la récupération des données.
+    
   } else {
     // En mode API (à implémenter ultérieurement)
+    //
     return null;
   }
+  // faire la traduction des données de performance ici 
+
+ // return new UserModel(info, myScore, myKeyData, activity, averageSession, performance);
 }

@@ -1,0 +1,11 @@
+.chartContainer {
+    position: relative;
+    background-color: black; /* Fond rouge */
+    width: 300px;
+    height: 300px;
+    color:white;
+    left: 340px;
+    top: -260px;
+    border-radius: 10px; /* Bords arrondis */
+  overflow: hidden; 
+}

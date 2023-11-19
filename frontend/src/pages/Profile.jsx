@@ -9,6 +9,7 @@ import lipide from "../img/lipide.PNG";
 import proteine from "../img/proteine.PNG";
 import CourbeActivity from "../components/CourbeActivity"; 
 import CourbeAverageSession from "../components/CourbeAverageSession"; 
+import CourbeRadar from "../components/CourbeRadar"; 
 
 function ProfileRequest() {
   const { id } = useParams();
@@ -35,6 +36,7 @@ function ProfileRequest() {
           <div className={styles.PartieCourbe}>
             <CourbeActivity data={user.activity} />
             <CourbeAverageSession data={user.averageSession} />
+            <CourbeRadar data={user.performance} />
           </div>
 
           <div className={styles.gadgetContainer}>
