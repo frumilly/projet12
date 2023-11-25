@@ -3,7 +3,7 @@
 .gadgetItem {
     display: flex;
     align-items: center;
-    background-color: rgb(245, 245, 249);
+    background-color: rgb(254, 254, 255);
     margin-bottom: 20px;
   }
   
@@ -19,4 +19,10 @@
     justify-content: center;
     margin-left: 10px; /* Ajoutez un espacement à gauche si nécessaire */
   }
-  
+  .measure{
+    font-weight: bold;
+  }
+  .unit{
+    position:relative;
+    top:-30px;
+  }

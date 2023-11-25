@@ -27,7 +27,9 @@ function Header() {
 
       <div className={`${styles.rectangle} ${styles.horizontal}`}>
         {/* Autres éléments horizontaux du header */}
+        
       </div>
+      <div className={styles.copiryght}> Copiryght, SportSee 2020 </div>
     </div>
   );
 }

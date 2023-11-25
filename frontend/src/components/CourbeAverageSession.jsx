@@ -21,15 +21,29 @@ const CourbeAverageSession = ({ data }) => {
   return (
     <div className={styles.chartContainer}>
       
-      <LineChart width={280} height={300} data={data} margin={{ top: 0, right: 0, left: -40, bottom: 0 }} viewBox="0 200 200 400">
+      <LineChart 
+        width={280} height={300} data={data} margin={{ top: 0, right: 0, left: -40, bottom: 0 }} viewBox="0 200 200 400">
       <text x="10" y="30" dy={-10} fontSize={16}  fill="#fff">Durée moyenne des sessions</text>
         <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
-        <XAxis dataKey="day" tickLine={false} axisLine={false} tick={{ fontSize: 12, fill: '#fff' }} tickFormatter={(value) => daysOfWeek[value - 1]} />
-        <YAxis orientation="left" label={{ value: '', angle: -90, position: 'insideRight' }} axisLine={false} tickLine={false} tick={{ fontSize: 0 }} />
+        <XAxis 
+          dataKey="day" 
+          tickLine={false} 
+          axisLine={false} 
+          tick={{ fontSize: 12, fill: '#fff' }} 
+          tickFormatter={(value) => daysOfWeek[value - 1]} />
+        <YAxis 
+          //orientation="left" 
+         // label={{ value: '', angle: -90, position: 'insideRight' }} 
+          axisLine={false} 
+          tickLine={false} 
+          tick={false}
+          domain={['dataMin - 10', 'dataMax + 10']} 
+          />
+
         <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#fff', strokeWidth: 0}} />
 
         {/* Courbe */}
-        <Line type="monotone" dataKey="sessionLength" stroke="#fff" name="Durée moyenne des sessions" dot={false} />
+        <Line type="natural" dataKey="sessionLength" stroke="#fff" name="Durée moyenne des sessions" dot={false} />
 
 
       </LineChart>

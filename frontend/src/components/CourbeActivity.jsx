@@ -21,8 +21,7 @@ const CourbeActivity = ({ data }) => {
     <BarChart width={800} height={400} data={data} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
       <text x="10" y="30" dy={-10} fontSize={16} fontWeight="bold" fill="#000000">Activité quotidienne</text>
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
-      <XAxis dataKey="value" domain={[1, 10]} />
-      <XAxis dataKey="value" tickValues={xAxisData} />
+      <XAxis dataKey="value" domain={[1, 10]} tickValues={xAxisData} />
       <YAxis yAxisId="left" orientation="left" label={{ value: '', angle: -90, position: 'insideRight' }} 
         axisLine={false}
         tickLine={false}

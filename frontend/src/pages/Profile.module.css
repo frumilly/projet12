@@ -14,5 +14,14 @@
 }
 .gadgetContainer{
     margin-left: 900px;
-    margin-top: -700px;
+    margin-top: -1300px;
+}
+.applaudissement{
+    background-size: cover; 
+    width: 40px; /* Largeur du logo */
+    height: 40px; /* Hauteur du logo */
+    background-image: url("../img/applaudissement_icone.PNG"); 
+    position:relative;
+top:-50px;
+left:340px;
 }

@@ -1,11 +1,12 @@
 .chartContainer {
     position: relative;
     background-color: black; /* Fond rouge */
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 310px;
     color:white;
     left: 340px;
     top: -260px;
+    font-size: 15px;
     border-radius: 10px; /* Bords arrondis */
   overflow: hidden; 
 }

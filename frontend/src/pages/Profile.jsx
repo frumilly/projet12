@@ -9,7 +9,8 @@ import lipide from "../img/lipide.PNG";
 import proteine from "../img/proteine.PNG";
 import CourbeActivity from "../components/CourbeActivity"; 
 import CourbeAverageSession from "../components/CourbeAverageSession"; 
-import CourbeRadar from "../components/CourbeRadar"; 
+import CourbeRadar from "../components/CourbeRadar";
+import Objectif from "../components/Objectif"; 
 
 function ProfileRequest() {
   const { id } = useParams();
@@ -17,12 +18,21 @@ function ProfileRequest() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userData = getUser(parseInt(id, 10));
-    setUser(userData);
+    const fetchData = async () => {
+      try {
+        const userData = await getUser(parseInt(id, 10));
+        setUser(userData);
 
-    if (!userData) {
-      navigate('/error');
-    }
+        if (!userData) {
+          navigate('/error');
+        }
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données utilisateur', error);
+        navigate('/error');
+      }
+    };
+
+    fetchData();
   }, [id, navigate]);
 
   return (
@@ -30,13 +40,14 @@ function ProfileRequest() {
       {user ? (
         <div>
           <div className={styles.bonjour}>Bonjour <div className={styles.firstname}>{user.info.firstName} </div> </div>
-          <p> Félicitation! vous avez explosé vos objectifs hier</p>
+          <p> Félicitation! vous avez explosé vos objectifs hier </p>  <div className={styles.applaudissement}></div>
           
           {/* Intégration de la courbe dans la partie PartieCourbe */}
           <div className={styles.PartieCourbe}>
             <CourbeActivity data={user.activity} />
             <CourbeAverageSession data={user.averageSession} />
             <CourbeRadar data={user.performance} />
+            <Objectif data={user.myScore} />
           </div>
 
           <div className={styles.gadgetContainer}>
