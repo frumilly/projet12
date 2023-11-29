@@ -15,13 +15,16 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const CourbeActivity = ({ data }) => {
-  const xAxisData = Array.from({ length: 10 }, (_, index) => index + 1);
+  const xAxisData = data.map((session, index) => ({
+    ...session,
+    index: index + 1,
+  }));
 
   return (
-    <BarChart width={800} height={400} data={data} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
+    <BarChart width={800} height={400} data={xAxisData} margin={{ top: 30, right: 30, left: 20, bottom: 10 }}>
       <text x="10" y="30" dy={-10} fontSize={16} fontWeight="bold" fill="#000000">Activité quotidienne</text>
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
-      <XAxis dataKey="value" domain={[1, 10]} tickValues={xAxisData} />
+      <XAxis dataKey="index" tickFormatter={(value) => `${value}`} />
       <YAxis yAxisId="left" orientation="left" label={{ value: '', angle: -90, position: 'insideRight' }} 
         axisLine={false}
         tickLine={false}

@@ -5,12 +5,14 @@
     align-items: center;
     background-color: rgb(254, 254, 255);
     margin-bottom: 20px;
+    margin-left: 40px;
   }
   
   .gadgetStyle {
     width: 90px;
     height: 90px;
     background-size: cover;
+    margin-bottom: 100px;
   }
   
   .measureUnitContainer {

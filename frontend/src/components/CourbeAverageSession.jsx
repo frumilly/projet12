@@ -1,6 +1,5 @@
-// CourbeAverageSession.jsx
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Rectangle } from 'recharts';
 import styles from './CourbeAverageSession.module.css'; // Import fichier CSS avec les styles
 
 const CourbeAverageSession = ({ data }) => {
@@ -18,12 +17,17 @@ const CourbeAverageSession = ({ data }) => {
     return null;
   };
 
+  const CustomCursor = ({ width, height, ...props }) => {
+    return (
+      <Rectangle x={150} width={150} height={300} fill="rgba(128, 0, 0, 0.3)" {...props} />
+    );
+  };
+
   return (
     <div className={styles.chartContainer}>
-      
       <LineChart 
         width={280} height={300} data={data} margin={{ top: 0, right: 0, left: -40, bottom: 0 }} viewBox="0 200 200 400">
-      <text x="10" y="30" dy={-10} fontSize={16}  fill="#fff">Durée moyenne des sessions</text>
+        <text x="10" y="30" dy={-10} fontSize={16} fill="#fff">Durée moyenne des sessions</text>
         <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
         <XAxis 
           dataKey="day" 
@@ -32,20 +36,15 @@ const CourbeAverageSession = ({ data }) => {
           tick={{ fontSize: 12, fill: '#fff' }} 
           tickFormatter={(value) => daysOfWeek[value - 1]} />
         <YAxis 
-          //orientation="left" 
-         // label={{ value: '', angle: -90, position: 'insideRight' }} 
           axisLine={false} 
           tickLine={false} 
           tick={false}
           domain={['dataMin - 10', 'dataMax + 10']} 
-          />
-
-        <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#fff', strokeWidth: 0}} />
+        />
+        <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(128, 0, 0, 0.3)', strokeWidth: 2, position: 'right' }} cursor={<CustomCursor />} />
 
         {/* Courbe */}
         <Line type="natural" dataKey="sessionLength" stroke="#fff" name="Durée moyenne des sessions" dot={false} />
-
-
       </LineChart>
     </div>
   );

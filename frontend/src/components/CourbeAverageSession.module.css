@@ -7,6 +7,7 @@
     top: 40px;
     border-radius: 10px; /* Bords arrondis */
   overflow: hidden; /* Masquer les coins arrondis dépassant */
+  width: 282px;
 }
   
 
