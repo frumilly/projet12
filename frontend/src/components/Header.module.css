@@ -122,3 +122,15 @@ left: 200px;
   bottom: -240px;
   left:25px;
 }
+@media screen and (max-width: 1024px) and (max-height: 780px) {
+  .horizontal {
+    width: 100%;
+    background-color: black;
+  }
+  
+
+  .menu{
+    
+    width: 100%;
+  }
+}

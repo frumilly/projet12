@@ -25,10 +25,12 @@ function Header() {
         <Icons />
       </div>
 
-      <div className={`${styles.rectangle} ${styles.horizontal}`}>
+      
+      <div className={styles.horizontal}>
         {/* Autres éléments horizontaux du header */}
         
       </div>
+      
       <div className={styles.copiryght}> Copiryght, SportSee 2020 </div>
     </div>
   );
