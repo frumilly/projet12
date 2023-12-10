@@ -26,7 +26,30 @@
   border-radius:5px;
   color: #fff; /* Couleur du texte en blanc */
 }
+/* CustomCursor.module.css */
+.cursor {
+  position: absolute;
+  top: 0;
+  background-color: rgba(128, 0, 0, 0.3);
+  pointer-events: none; /* Permet au curseur de ne pas interférer avec les événements de la souris */
+  z-index: 99; /* Assurez-vous que le curseur est au-dessus du graphique */
+}
+
 
 .tooltipContent {
   margin: 0;
+}
+/* Ajoutez ce style dans votre fichier CSS (CourbeAverageSession.module.css) */
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  pointer-events: none; /* Pour que l'overlay ne bloque pas les événements de la souris sur le graphique */
+  display: none; /* Initialement masqué */
 }

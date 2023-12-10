@@ -4,7 +4,7 @@ import { UserModel } from './UserModel';
 import { translatePerformanceKind } from './Traduction'; // Importez la fonction de traduction
 import axios from 'axios';
 const apiUrl = 'http://localhost:3000/user';
-const isMock = false;
+const isMock = false; //si true il récupére les données depuis le mockData
 
 let userData;
 let activity;
@@ -34,11 +34,16 @@ export async function getUser(id) {
     try {
       const userResponse = await axios.get(`${apiUrl}/${id}`);
       userData = userResponse.data.data;
-      //console.log("Données utilisateur récupérées avec succès", userData.data.userInfos.firstName);
-      activity = USER_ACTIVITY.find((data) => data.userId === id)?.sessions || [];
       
-      averageSession = USER_AVERAGE_SESSIONS.find((data) => data.userId === id)?.sessions || [];
-      performance = USER_PERFORMANCE.find((data) => data.userId === id)?.data || [];
+     const averageSessionResponse = await axios.get(`http://localhost:3000/user/${id}/average-sessions`);
+
+      const activityResponse = await axios.get(`http://localhost:3000/user/${id}/activity`);
+     activity = activityResponse.data.data.sessions || [];
+  
+      
+      averageSession =averageSessionResponse.data.data.sessions || [];
+      const performanceResponse = await axios.get(`http://localhost:3000/user/${id}/performance`);
+      performance = performanceResponse.data.data.data || [];;
       
       // Traduction
       performance = performance.map(item => ({

@@ -41,7 +41,13 @@ const CourbeAverageSession = ({ data }) => {
           tick={false}
           domain={['dataMin - 10', 'dataMax + 10']} 
         />
-        <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(128, 0, 0, 0.3)', strokeWidth: 2, position: 'right' }} cursor={<CustomCursor />} />
+        <Tooltip
+            content={<CustomTooltip />}
+            cursor={{
+              stroke: "rgba(0, 0, 0, 0.1)",
+              strokeWidth: 52,
+            }}
+          />
 
         {/* Courbe */}
         <Line type="natural" dataKey="sessionLength" stroke="#fff" name="Durée moyenne des sessions" dot={false} />
